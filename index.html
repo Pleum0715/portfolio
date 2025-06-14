@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -138,7 +138,7 @@
         /* About Section */
         #about { background: #111827; }
         .about-content { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
-        .about-img { width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); object-fit: cover; }
+        .about-img { width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); object-fit: cover; margin: 0 auto; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .skill-item {
             background: rgba(102, 126, 234, 0.1); padding: 1.25rem; border-radius: 12px;
@@ -149,8 +149,9 @@
         .skill-icon { font-size: 2.5rem; color: #667eea; margin-bottom: 0.75rem; }
         .skill-name { font-size: 1rem; font-weight: 500; }
 
-        /* Portfolio Section */
-        #portfolio, #certificates { background: #0a0a0a; }
+        /* Portfolio & Certificate Section */
+        #portfolio { background: #0a0a0a; }
+        #certificates { background: #111827; }
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
         .portfolio-item {
             background: #1f2937; border-radius: 20px; overflow: hidden;
@@ -161,14 +162,6 @@
         .portfolio-item:hover .portfolio-image { transform: scale(1.05); }
         .portfolio-content { padding: 2rem; }
         .portfolio-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff; }
-        .portfolio-link {
-            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem;
-            border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;
-        }
-        .link-primary { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
-
-        /* Certificate Section (re-uses portfolio styles) */
-        #certificates { background: #111827; }
 
         /* Footer */
         .footer { background: #0a0a0a; border-top: 1px solid rgba(102, 126, 234, 0.1); padding: 3rem 0; }
@@ -182,14 +175,43 @@
         }
         .footer-socials a:hover { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; transform: translateY(-3px); }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .contact-content { grid-template-columns: 1fr; gap: 3rem; }
-        }
+        /* === Responsive for Mobile === */
         @media (max-width: 768px) {
+            body {
+                word-wrap: break-word; /* For older browsers */
+                overflow-wrap: break-word; /* Standard property for breaking long words */
+            }
+            .container { padding: 0 1rem; }
             .nav-menu { display: none; }
             .mobile-menu-btn { display: block; }
-            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .section { padding: 4rem 0; }
+            
+            /* Hero (Home) Section Mobile */
+            .hero {
+                padding: 6rem 1.5rem;
+                min-height: 90vh; /* Adjust height for mobile */
+            }
+            .hero-title { font-size: clamp(2.5rem, 12vw, 3.5rem); }
+            .hero-occupation { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+            .hero-subtitle { font-size: clamp(1rem, 4vw, 1.1rem); margin-bottom: 2.5rem; }
+            .hero-buttons { gap: 1rem; }
+            .btn { padding: 0.8rem 2rem; font-size: 0.9rem;}
+
+            /* About Section Mobile */
+            .about-content { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 2rem;
+            }
+            .about-details {
+                text-align: left; /* Change to left-align for readability */
+            }
+            
+            /* Portfolio & Certificates Mobile */
+            .portfolio-grid { gap: 1.5rem; }
+            .portfolio-content { padding: 1.5rem; }
+
+            /* Footer Mobile */
             .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
@@ -279,7 +301,7 @@
             <h2 class="section-title">กิจกรรมและการแข่งขัน</h2>
             <p class="section-subtitle">รวบรวมกิจกรรมและรางวัลที่ได้รับ</p>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                 <div class="portfolio-item">
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="ภาพกิจกรรม 1" class="portfolio-image" loading="lazy">
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">หัวข้อกิจกรรม 1</h3>
